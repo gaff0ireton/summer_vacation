@@ -6,12 +6,18 @@
     "node": ">=22.12.0"
   },
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --open",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^7.1.6"
+    "@tailwindcss/vite": "4.3.3",
+    "astro": "^7.1.6",
+    "destyle.css": "^4.0.1",
+    "tailwindcss": "4.3.3"
+  },
+  "devDependencies": {
+    "sass": "^1.102.0"
   }
 }

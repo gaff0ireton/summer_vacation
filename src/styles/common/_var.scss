@@ -1,0 +1,15 @@
+$mainColor: #2DC7C2;
+$subColor: #77E6E1;
+$acColor: #FF5F9E;
+$bgColor: #56D4CF;
+$cardColor: #FFFDF8;
+$txtColor: #30556D;
+$sundayColor: #ff0000;
+$saturdayColor: #4169e1;
+
+// math モジュール
+@use "sass:math";
+@use "sass:map";
+
+// common/_index.scss を読み込む（mixin が使える）
+@use 'mixin';

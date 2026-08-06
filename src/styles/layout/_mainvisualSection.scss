@@ -1,0 +1,20 @@
+// common/_index.scss を読み込む（mixin が使える）
+@use "../common" as *;
+
+.main-visual {
+    position: relative;
+    z-index: 1;
+    height: 90vh;
+    background-image: url(../../../public/images/img_main.webp);
+    background-size: cover;
+    margin: 0 1rem;
+    border-radius: 100px;
+    border: solid 5px $mainColor;
+
+    h1 {
+        font-size: 6rem;
+        position: absolute;
+        top: calc(368 / 820 * 100%);
+        left: calc(16 / 1920 * 100%);
+    }
+}

@@ -1,0 +1,54 @@
+// common/_index.scss を読み込む（mixin が使える）
+@use "../common" as *;
+
+.shareSection {
+
+    h2 {
+        width: fit-content;
+        display: inline-block;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 0 4px 32px;
+        background-image: linear-gradient($bgColor 0%, $bgColor 100%);
+
+        @include mq(){
+            padding: 0 vw-sp(4) vw-sp(32);
+        }
+    }
+
+    &__box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5em;
+        border: 2px solid $mainColor;
+        width: fit-content;
+        margin: -52px auto 0;
+        padding: 64px 32px 32px;
+        border-radius: 25px;
+
+        @include mq(){
+            padding: vw-sp(64) vw-sp(32) vw-sp(32);
+            margin: vw-sp(-52) auto 0;
+        }
+    }
+
+    ul {
+        li {
+            iconify-icon {
+                color: $mainColor;
+                font-size: 48px;
+                transition: opacity ease 0.3s;
+
+                &:hover {
+                    opacity: .5;
+                }
+
+                @include mq(){
+                    font-size: vw-sp(48);
+                }
+            }
+        }
+    }
+}

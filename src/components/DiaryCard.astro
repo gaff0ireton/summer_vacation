@@ -1,0 +1,14 @@
+---
+const { image, alt, date, title, text } = Astro.props;
+---
+
+<li>
+  <article>
+    <picture>
+      <img src={image} alt={alt} />
+    </picture>
+    <time>{date}</time>
+    <h2>{title}</h2>
+    <p>{text}</p>
+  </article>
+</li>

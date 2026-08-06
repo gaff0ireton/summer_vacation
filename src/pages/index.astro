@@ -1,17 +1,64 @@
 ---
+import Layout from "../layouts/Layout.astro";
+import DiaryCard from "../components/DiaryCard.astro";
+import "../styles/global.css";
+import "../styles/global.scss";
 
+const diaries = [
+  {
+    image: "/images/img_diary_01.webp",
+    date: "8月8日",
+    title: "美容室に行きました",
+    text: "",
+  },
+  {
+    image: "/images/img_diary_01.webp",
+    date: "8月8日",
+    title: "美容室に行きました",
+    text: "",
+  },
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Astro">
+  <main>
+    <section>
+      <div class="main-visual">
+        <h1>summer vacation</h1>
+      </div>
+      <div class="wrapper">
+      	<ul>
+	        {
+	          diaries.map((diary) => (
+	            <DiaryCard image={diary.image} date={diary.date} title={diary.title} text={diary.text} />
+	          ))
+	        }
+	      </ul>
+		  <aside>
+			<h2>aaaa</h2>
+			<ul>
+				<li>aaaaaaaaaa</li>
+				<li>aaaaaaaaaa</li>
+				<li>aaaaaaaaaa</li>
+				<li>aaaaaaaaaa</li>
+				<li>aaaaaaaaaa</li>
+			</ul>
+		  </aside>
+      </div>
+      <!-- !DiaryCardを抜いて下記でも可 -->
+      <!-- <ul>
+	      {
+	        diaries.map((diary) => (
+	          <li>
+	            <article>
+	              <time>{diary.date}</time>
+	              <h2>{diary.title}</h2>
+	              <p>{diary.text}</p>
+	            </article>
+	          </li>
+	        ))
+	      }
+	    </ul> -->
+    </section>
+  </main>
+</Layout>

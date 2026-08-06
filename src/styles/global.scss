@@ -1,0 +1,9 @@
+@use "./common" as *;
+@use "./layout" as *;
+
+body{
+    background-color: $bgColor;
+    h1{
+        font-size: vw-pc(32);
+    }
+}

@@ -1,0 +1,144 @@
+// ② common/_index.scss を読み込む（mixin が使える）
+@use "../common" as *;
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    padding: 20px;
+    pointer-events: none;
+
+    @include mq(){
+        padding: vw-sp(10);
+    }
+
+    &__logo {
+        width: 300px;
+        height: auto;
+        pointer-events: auto;
+
+        @include mq(){
+            width: vw-sp(200);
+        }
+
+        svg {
+            transition: opacity .3s;
+
+            &:hover {
+                opacity: .5;
+            }
+
+            .cls-1 {
+                fill: #fff;
+                transition: fill .3s;
+            }
+
+            .is-over {
+                fill: $mainColor;
+            }
+        }
+    }
+
+    &__wrap {
+        position: relative;
+    }
+
+    &__btn {
+        width: 40px;
+        height: 30px;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+        z-index: 3;
+        display: inline-block;
+        pointer-events: auto;
+
+        span {
+            display: block;
+            height: 4px;
+            margin: 6px 0;
+            background: #fff;
+            border-radius: 2px;
+            transition: 0.4s;
+
+            &.is-over {
+                background: $mainColor;
+            }
+
+            &.is-click {
+                background: #fff;
+            }
+        }
+    }
+
+    &__nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100%;
+        background: $mainColor;
+        transition: right 0.4s ease;
+        z-index: 2;
+
+        ul {
+            list-style: none;
+            padding: 60px 20px;
+            pointer-events: auto;
+
+            li {
+                margin: 20px 0;
+
+                a {
+                    text-decoration: none;
+                    color: #fff;
+                    font-size: 1.2rem;
+                    transition: opacity ease 0.3s;
+
+                    &:hover {
+                        opacity: .5;
+                    }
+                }
+            }
+        }
+    }
+
+    picture {
+        position: fixed;
+        right: -100%;
+        bottom: 0;
+        z-index: 2;
+        width: 100%;
+        transition: right 0.4s ease;
+    }
+
+    #menu-toggle {
+        &:checked {
+            +.header__btn {
+                span {
+                    &:first-child {
+                        transform: translateY(10px) rotate(45deg);
+                    }
+
+                    &:nth-child(2) {
+                        opacity: 0;
+                    }
+
+                    &:last-child {
+                        transform: translateY(-10px) rotate(-45deg);
+                    }
+                }
+            }
+
+            ~.header__nav {
+                right: 0;
+            }
+
+            ~picture {
+                right: 0;
+            }
+        }
+    }
+}
