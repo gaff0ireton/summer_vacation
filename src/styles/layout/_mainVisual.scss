@@ -173,6 +173,7 @@
 
             @include mq() {
                 width: vw(240,750);
+                bottom: 17%;
             }
         }
 

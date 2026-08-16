@@ -17,7 +17,7 @@
         gap: clamp(14px, vw-pc(16), 18px);
 
         @include mq() {
-            gap: vw(8,375);
+            gap: vw(4,375);
         }
     }
 
