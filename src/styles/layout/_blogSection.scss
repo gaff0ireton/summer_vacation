@@ -1,0 +1,151 @@
+// ② common/_index.scss を読み込む（mixin が使える）
+@use "../common" as *;
+
+.blogSection {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(28px, vw-pc(32), 32px);
+
+    @include mq() {
+        gap: vw(32, 375);
+    }
+
+    &__ttl {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    &__weather {
+        width: clamp(56px, vw-pc(64), 64px);
+
+        @include mq() {
+            width: vw(64, 750);
+        }
+    }
+
+    .diary-swiper {
+        --swiper-theme-color: #2dc7c2;
+    }
+
+    .blogSection__sticker {
+        @extend %sticker;
+
+        &--hamburger {
+            top: 5%;
+            right: 0;
+            transform: rotate(20deg);
+        }
+
+        &--potato {
+            top: 43%;
+            left: 0;
+            transform: rotate(-19deg);
+        }
+
+        &--drink {
+            top: 60%;
+            right: 3%;
+            transform: rotate(16deg);
+        }
+
+        &--controller {
+            top: 10%;
+            transform: rotate(-20deg);
+        }
+
+        &--invaders {
+            bottom: 10%;
+            right: 0;
+            transform: rotate(20deg);
+        }
+
+        &--sushi {
+            top: 5%;
+            right: 0;
+            transform: rotate(-20deg);
+        }
+
+        &--fish {
+            bottom: 5%;
+            left: 4%;
+            transform: rotate(20deg);
+        }
+
+        &--cutlery {
+            bottom: 10%;
+            transform: rotate(-20deg);
+
+        }
+
+        &--tako {
+            top: 10%;
+            right: 0;
+            transform: rotate(20deg);
+
+        }
+
+        &--sleep {
+            top: 5%;
+            right: 5%;
+            transform: rotate(-20deg);
+        }
+
+        &--cry {
+            top: 10%;
+            transform: rotate(20deg);
+        }
+
+        &--battery {
+            bottom: 10%;
+            right: 0;
+            transform: rotate(-20deg);
+        }
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 64px;
+
+        @include mq() {
+            gap: vw(32, 375);
+        }
+
+        li {
+            position: relative;
+
+            article {
+                @extend %card;
+
+                overflow: visible;
+
+                time {
+                    color: $mainColor;
+                    font-size: clamp(28px, vw-pc(32), 32px);
+                    font-weight: 400;
+
+                    @include mq() {
+                        font-size: vw(36, 750);
+                    }
+
+                }
+
+                >div {
+                    position: relative;
+
+                    .diary-img {
+                        container-type: inline-size;
+                        border-radius: clamp(44px, vw-pc(50), 50px);
+                        overflow: hidden;
+
+                        @include mq() {
+                            border-radius: vw(25, 750);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

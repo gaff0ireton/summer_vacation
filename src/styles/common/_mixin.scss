@@ -3,7 +3,7 @@
 
 // 設計値をまとめて管理
 $breakpoints: (
-  "sp": 750px,
+  "sp": 768px,
   "tab": 1024px,
   "pc": 1280px
 );
@@ -64,3 +64,42 @@ $sp-base-width: 500; // この幅(viewport)でSPデザインが原寸表示に�
     @content;
   }
 }
+
+@mixin moving-stripe(
+  $transparent-width: 60px,
+  $color-width: 60px,
+  $color: #ffd5b4,
+  $duration: 30s,
+  $direction: 1
+) {
+  // 透明部分＋色部分＝模様の1周期
+  $cycle: $transparent-width + $color-width;
+
+  // 斜め移動時のX・Yそれぞれの移動量
+  $move: math.div($cycle, math.sqrt(2)) * $direction;
+
+  // @keyframesへ渡す
+  --stripe-move: #{$move};
+
+  background: repeating-linear-gradient(
+    135deg,
+    transparent 0 $transparent-width,
+    $color $transparent-width $cycle
+  );
+
+  animation: stripeMove $duration linear infinite;
+}
+
+// @keyframes stripeMove {
+//   from {
+//     transform: translate3d(0, 0, 0);
+//   }
+
+//   to {
+//     transform: translate3d(
+//       var(--stripe-move),
+//       var(--stripe-move),
+//       0
+//     );
+//   }
+// }

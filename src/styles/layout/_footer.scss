@@ -30,7 +30,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 32px;
+        gap: clamp(28px,vw-pc(32),32px);
         margin: 0 auto;
 
         @include mq(){

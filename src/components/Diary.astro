@@ -1,0 +1,629 @@
+---
+import DiaryCard from "./DiaryCard.astro";
+const diaries = [
+  {
+    id: "day_08",
+    image: [
+      {
+        image: "/images/img_diary_01.webp",
+        alt: "口を大きく開けて、私に食べられるのを待っている可愛いタコスチリハンバーガー",
+      },
+    ],
+    date: "8/8",
+    weather: "/images/img_diary_weather_01.webp",
+    title: "ハンバーガーを食べました",
+    text: [
+      [
+        {
+          type: "text",
+          content: "美容室に行ってから、モスバーガーに行きました。",
+        },
+      ],
+      [
+        {
+          type: "text",
+          content: "期間限定の",
+        },
+        {
+          type: "strong",
+          content: "スパイシーモスタコスバーガー",
+        },
+        {
+          type: "text",
+          content: "を注文しました。",
+        },
+      ],
+      [
+        {
+          type: "text",
+          content: "詳しくは",
+        },
+        {
+          type: "link",
+          content: "モスバーガー公式サイト",
+          href: "https://www.mos.jp/",
+        },
+        {
+          type: "text",
+          content: "を見てください。",
+        },
+      ],
+    ],
+    sticker: [
+      { image: "/images/img_diary_sticker_01.webp", class: "hamburger" },
+      { image: "/images/img_diary_sticker_02.webp", class: "potato" },
+      { image: "/images/img_diary_sticker_03.webp", class: "drink" },
+    ],
+  },
+  {
+    id: "day_09",
+    image: [
+      {
+        image: "/images/img_diary_02.webp",
+        alt: "RTA in Japan",
+      }
+    ],
+    date: "8/9",
+    title: "RTA IN JAPAN 1日目",
+    text: [
+      [
+        {
+          type: "text",
+          content: "8/9から8/15まで、",
+        },
+        {
+          type: "link",
+          content: "「RTA in Japan」",
+          href: "https://rtain.jp/",
+        },
+        {
+          type: "text",
+          content: "が開催されます。",
+        },
+      ],
+      [
+        {
+          type: "text",
+          content: "今年は",
+        },
+        {
+          type: "link",
+          content: "「TitanFall2」",
+          href: "https://store.steampowered.com/app/1237970/Titanfall_2/?l=japanese",
+        },
+        {
+          type: "text",
+          content: " ",
+        },
+        {
+          type: "link",
+          content: "「geoguessr」",
+          href: "https://www.geoguessr.com/ja",
+        },
+        {
+          type: "text",
+          content: " ",
+        },
+        {
+          type: "link",
+          content: "「CALLING ～黒き着信～」",
+          href: "https://www.nintendo.co.jp/wii/software/scaj/index.html",
+        },
+        {
+          type: "text",
+          content: "の3タイトルを楽しみにしています。",
+        },
+      ],
+      [
+        {
+          type: "text",
+          content: "知らないタイトルもたくさん出てくるので、それも楽しみの一つです。",
+        },
+      ],
+    ],
+    sticker: [
+      { image: "/images/img_diary_sticker_04.webp", class: "invaders" },
+      { image: "/images/img_diary_sticker_05.webp", class: "controller" },
+    ],
+  },
+  {
+    id: "day_10",
+    image: [
+      {
+        image: "/images/img_diary_03.webp",
+        alt: "",
+      },
+    ],
+    date: "8/10",
+    title: "勉強会",
+    text: [
+      [
+        {
+          type: "text",
+          content: "クラスメイトさんたちと、オンラインで勉強会をしました。\n",
+        },
+        {
+          type: "strong",
+          content: "Live Share",
+        },
+        {
+          type: "text",
+          content: "と",
+        },
+        {
+          type: "strong",
+          content: "Google Meet",
+        },
+        {
+          type: "text",
+          content: "を使い、画面やコードを共有しながら、それぞれの制作について相談したり、分からないところを一緒に確認したりしました。",
+        },
+      ],
+      [
+        {
+          type: "text",
+          content: "僭越ながら、今回はコードレビューもさせていただきました。\n普段は自分のコードと向き合うことが多いので、他の人が書いたコードを見るのは新鮮でした。",
+        }
+      ],
+      [
+        {
+          type: "text",
+          content: "自分の知っている範囲ではありますが、気になったところや改善できそうなところをお伝えしました。\nサイト制作の手助けに、少しでもなっていれば嬉しいです。",
+        },
+      ],
+    ],
+    sticker: [{ image: "/images/img_diary_sticker_06.webp", class: "hamburger" }],
+  },
+  {
+    id: "day_11",
+    image: [
+      {
+        image: "/images/img_diary_04.webp",
+        alt: "早くお寿司食べたくて、適当に撮られたお寿司",
+      },
+    ],
+    date: "8/11",
+    title: "お寿司を食べました",
+    text: [
+      [
+        {
+          type: "text",
+          content: "スシローに行きました。マグロうめえ！サーモンうめえ！",
+        },
+      ],
+      [
+        {
+          type: "text",
+          content: "RiJは",
+        },
+        {
+          type: "link",
+          content: "播磨×RTA",
+          href: "https://harima-rta-2.jimdosite.com/"
+        },
+        {
+          type: "text",
+          content: "というチームが出場しており、オフライン開催されていました。\n",
+        },
+        {
+          type: "link",
+          content: "播磨町東部コミュニティセンター",
+          href: "https://harima-toubukomisen.studio.site/"
+        },
+        {
+          type: "text",
+          content: "が会場でした。",
+        }
+      ],
+      [
+        {
+          type: "text",
+          content: "私はTwitch配信で見ていました。\n13歳の子が出場していたり、ローカルgeoguessrだったり、RTA走者と現地の子供たちが一緒にプレイをする参加型RTAだったりと、見どころが沢山あって、すごく楽しかったです。現地に行けばよかったと少し後悔…。",
+        },
+      ]
+    ],
+    // text: [
+    //   "「播磨×RTA」というチームが出場しており、会場は「播磨町東部コミュニティセンター」で行われておりました。",
+    //   "私は家から配信で見ていました。「リングフィットアドベンチャー」RTA面白かったです。",
+    //   "夜はスシローに行きました。マグロおいしかった。",
+    // ],
+    sticker: [
+      { image: "/images/img_diary_sticker_07.webp", class: "sushi" },
+      { image: "/images/img_diary_sticker_08.webp", class: "fish" }
+
+    ],
+  },
+  {
+    id: "day_12",
+    image: [
+      {
+        image: "/images/img_diary_05.webp",
+        alt: "",
+      },
+    ],
+    date: "8/12",
+    title: "RTA IN JAPAN 4日目",
+    text: [
+      [
+        {
+          type: "text",
+          content: "昨日の23時から",
+        },
+        {
+          type: "strong",
+          content: "TitanFall2"
+        },
+        {
+          type: "text",
+          content: "のRTAが始まり、夜更かしをして視聴していました。",
+        },
+      ],
+      [
+        {
+          type: "text",
+          content: "昔プレイしたことはあるのですが、プレイが凄すぎて何やってるか全然わからなかった…。",
+        }
+      ],
+      [
+        {
+          type: "text",
+          content: "面白いので、Youtubeのアーカイブをぜひ見てほしいです。",
+        }
+      ],
+      [
+        {
+          type: "strong",
+          content: "信じて！",
+        }
+      ],
+    ],
+    sticker: [
+      { image: "/images/img_diary_sticker_04.webp", class: "invaders" },
+      { image: "/images/img_diary_sticker_05.webp", class: "controller" },
+    ],
+  },
+  {
+    id: "day_13",
+    image: [
+      {
+        image: "/images/img_diary_06.webp",
+        alt: "サフランクリームパスタ",
+      },
+      {
+        image: "/images/img_diary_07.webp",
+        alt: "シュガーバタークレープ",
+      },
+      {
+        image: "/images/img_diary_08.webp",
+        alt: "ポケセン整理券",
+      },
+      {
+        image: "/images/img_diary_09.webp",
+        alt: "でかかわ",
+      },
+    ],
+    date: "8/13",
+    title: "大阪にお出かけ",
+    text: [
+      [
+        {
+          type: "text",
+          content: "友人と大阪に行きました。お昼はルクア大阪5Fの",
+        },
+        {
+          type: "link",
+          content: "アフタヌーンティー・ラブアンドテーブル",
+          href: "https://www.afternoon-tea.net/tearoom/love-and-table/"
+        },
+        {
+          type: "text",
+          content: "で、パスタとクレープを食べました。",
+        },
+      ],
+      [
+        {
+          type: "text",
+          content: "次はルクアサウスの",
+        },
+        {
+          type: "link",
+          content: "ポケモンセンターオーサカ",
+          href: "https://shop.pokemon.co.jp/ja/shop/pokemoncenter-osaka/"
+        },
+        {
+          type: "text",
+          content: "に行きました。早速入場……と思いましたが、整理券が配られており、入場時間は一時間後とのこと。",
+        }
+      ],
+      [
+        {
+          type: "text",
+          content: "一先ず整理券を受け取って、時間潰しに",
+        },
+        {
+          type: "link",
+          content: "ヨドバシカメラ梅田",
+          href: "https://www.yodobashi.com/ec/store/0081/"
+        },
+        {
+          type: "text",
+          content: "に行くことにしました。\n",
+        },
+        {
+          type: "text",
+          content: "相変わらずガチャガチャコーナーが充実していました。",
+        },
+      ],
+      [
+        {
+          type: "text",
+          content: "その後にポケモンセンターに向かい、無事入場できました。\n",
+        },
+        {
+          type: "text",
+          content: "たくさん購入するつもりはなかったのですが、気づけば一時間ほど滞在しており、カゴの中も凄いことに…。",
+        },
+      ],
+      [
+        {
+          type: "text",
+          content: "友人から",
+        },
+        {
+          type: "link",
+          content: "KITTE大阪",
+          href: "https://osaka.jp-kitte.jp/"
+        },
+        {
+          type: "text",
+          content: "に大きなちいかわバルーンがあると聞き、向かってみることに。",
+        },
+        {
+          type: "strong",
+          content: "デカい。めちゃくちゃデカい。\n",
+        },
+        {
+          type: "text",
+          content: "「これはちいかわじゃなくて、でかかわだね」と友人と笑っていました。",
+        },
+      ],
+      [
+        {
+          type: "text",
+          content: "大阪楽しかったからまた行きたいな。",
+        },
+      ]
+    ],
+    sticker: [
+      { image: "/images/img_diary_sticker_09.webp", class: "cutlery" },
+      { image: "/images/img_diary_sticker_10.webp", class: "tako" },
+    ],
+  },
+  {
+    id: "day_14",
+    image: [
+      {
+        image: "/images/img_diary_10.webp",
+        alt: "ホゲータたち",
+      },
+      {
+        image: "/images/img_diary_11.webp",
+        alt: "ジュペッタとオボンのみを持ったサザンドラ",
+      },
+      {
+        image: "/images/img_diary_12.webp",
+        alt: "WCS2014",
+      },
+    ],
+    date: "8/14",
+    title: "家でのんびり",
+    text: [
+      [
+        {
+          type: "text",
+          content: "昨日は夜遅くまで遊んでいたので、おうちでのんびりダラダラ。",
+        },
+      ],
+      [
+        {
+          type: "text",
+          content: "写真がないので、昨日購入したポケモングッズの一部の写真でも貼ろう…。",
+        },
+      ],
+      [
+        {
+          type: "text",
+          content: "RiJでは、",
+        },
+        {
+          type: "link",
+          content: "ウンコテクニカ",
+          href: "https://store.steampowered.com/app/3101010/_/?l=japanese",
+        },
+        {
+          type: "text",
+          content: "というゲームの配信をやっていました。",
+        },
+      ]
+    ],
+    sticker: [{ image: "/images/img_diary_sticker_11.webp", class: "sleep" }],
+  },
+  {
+    id: "day_15",
+    image: [
+      {
+        image: "/images/img_diary_13.webp",
+        alt: "",
+      },
+    ],
+    date: "8/15",
+    title: "RTA IN JAPAN 最終日",
+    text: [
+      [
+        {
+          type: "text",
+          content: "8/9から開催されていた「RTA in Japan」も本日で最終日。",
+        },
+      ],
+      [
+        {
+          type: "text",
+          content: "今日は午後から音ゲーゾーンで、ノスタルジアを感じながら視聴していたら…",
+        },
+      ],
+      [
+        {
+          type: "text",
+          content: "ん…？",
+        },
+        {
+          type: "strong",
+          content: "バックアップ枠で真・女神転生 ifをDDRコンでプレイ…？",
+        },
+      ],
+      [
+        {
+          type: "link",
+          content: "新・女神転生 IF",
+          href: "https://www.nintendo.com/jp/games/feature/nintendo-classics/s-2149_j/index.html",
+        },
+        {
+          type: "text",
+          content: "って",
+        },
+        {
+          type: "link",
+          content: "SFC（スーパーファミコン）",
+          href: "https://www.nintendo.co.jp/n02/shvc/index.html",
+        },
+        {
+          type: "text",
+          content: "のソフトだよ？？",
+        }
+      ],
+      [
+        {
+          type: "strong",
+          content: "走者「AボタンとBボタンと十字キーがあればクリアできるからです」",
+        },
+      ],
+      [
+        {
+          type: "text",
+          content: "あっ…そっかあ…。",
+        },
+      ],
+      [
+        {
+          type: "text",
+          content: "終始ずっと笑ってました。",
+        },
+        {
+          type: "text",
+          content: "SFCなのに、FCレベルで頻繁にエンカウントしてるところは本当に面白かった。",
+        },
+      ],
+    ],
+    sticker: [
+      { image: "/images/img_diary_sticker_04.webp", class: "invaders" },
+      { image: "/images/img_diary_sticker_05.webp", class: "controller" },
+    ],
+  },
+  {
+    id: "day_16",
+    image: [
+      {
+        image: "/images/img_diary_14.webp",
+        alt: "",
+      },
+    ],
+    date: "8/16",
+    title: "最終日",
+    text: [
+      [
+        {
+          type: "text",
+          content: "長かったお盆休みも今日で最終日。",
+        },
+      ],
+      [
+        {
+          type: "text",
+          content: "あっという間だった…。長いお休みだったはずなのに…。",
+        },
+      ],
+      [
+        {
+          type: "text",
+          content: "明日からまた頑張るぞい。",
+        },
+      ],
+    ],
+    sticker: [
+      { image: "/images/img_diary_sticker_12.webp", class: "cry" },
+      { image: "/images/img_diary_sticker_13.webp", class: "battery" },
+    ],
+  },
+];
+---
+
+<section class="blogSection" id="blog">
+  <h2>diary</h2>
+  <ul>
+    {
+      diaries.map((diary) => (
+        <DiaryCard
+          id={diary.id}
+          image={diary.image}
+          date={diary.date}
+          weather={diary.weather}
+          title={diary.title}
+          text={diary.text}
+          sticker={diary.sticker}
+        />
+      ))
+    }
+
+    <!-- !DiaryCardを抜いて下記でも可 -->
+    <!-- <ul>
+	      {
+	        diaries.map((diary) => (
+	          <li>
+	            <article>
+	              <time>{diary.date}</time>
+	              <h2>{diary.title}</h2>
+	              <p>{diary.text}</p>
+	            </article>
+	          </li>
+	        ))
+	      }
+	    </ul> -->
+  </ul>
+</section>
+<script>
+  import Swiper from "swiper";
+  import { Navigation, Pagination } from "swiper/modules";
+
+  import "swiper/css";
+  import "swiper/css/navigation";
+  import "swiper/css/pagination";
+
+  document.querySelectorAll(".diary-swiper").forEach((element) => {
+    new Swiper(element as HTMLElement, {
+      modules: [Navigation, Pagination],
+
+      loop: true,
+      spaceBetween: 16,
+
+      navigation: {
+        nextEl: element.querySelector(".swiper-button-next") as HTMLElement,
+        prevEl: element.querySelector(".swiper-button-prev") as HTMLElement,
+      },
+
+      pagination: {
+        el: element.querySelector(".swiper-pagination") as HTMLElement,
+        clickable: true,
+      },
+    });
+  });
+</script>

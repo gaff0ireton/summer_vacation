@@ -1,64 +1,23 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import DiaryCard from "../components/DiaryCard.astro";
+import Sidebar from "../components/Sidebar.astro";
+import MainVisual from "../components/MainVisual.astro";
+import Diary from "../components/Diary.astro";
+import Profile from "../components/Profile.astro";
 import "../styles/global.css";
 import "../styles/global.scss";
-
-const diaries = [
-  {
-    image: "/images/img_diary_01.webp",
-    date: "8月8日",
-    title: "美容室に行きました",
-    text: "",
-  },
-  {
-    image: "/images/img_diary_01.webp",
-    date: "8月8日",
-    title: "美容室に行きました",
-    text: "",
-  },
-];
 ---
 
-<Layout title="Astro">
-  <main>
-    <section>
-      <div class="main-visual">
-        <h1>summer vacation</h1>
-      </div>
-      <div class="wrapper">
-      	<ul>
-	        {
-	          diaries.map((diary) => (
-	            <DiaryCard image={diary.image} date={diary.date} title={diary.title} text={diary.text} />
-	          ))
-	        }
-	      </ul>
-		  <aside>
-			<h2>aaaa</h2>
-			<ul>
-				<li>aaaaaaaaaa</li>
-				<li>aaaaaaaaaa</li>
-				<li>aaaaaaaaaa</li>
-				<li>aaaaaaaaaa</li>
-				<li>aaaaaaaaaa</li>
-			</ul>
-		  </aside>
-      </div>
-      <!-- !DiaryCardを抜いて下記でも可 -->
-      <!-- <ul>
-	      {
-	        diaries.map((diary) => (
-	          <li>
-	            <article>
-	              <time>{diary.date}</time>
-	              <h2>{diary.title}</h2>
-	              <p>{diary.text}</p>
-	            </article>
-	          </li>
-	        ))
-	      }
-	    </ul> -->
-    </section>
+<Layout title="🌞SUMMER VACATION🌞">
+  <main class="main-wrapper">
+    <MainVisual />
+    <div class="contents-wrapper">
+      <Diary />
+      <Sidebar />
+    </div>
+    <div class="contents-wrapper">
+      <Profile />
+      
+    </div>
   </main>
 </Layout>

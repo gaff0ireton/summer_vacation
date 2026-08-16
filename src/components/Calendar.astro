@@ -1,0 +1,102 @@
+---
+// import { map } from "astro:schema";
+
+const days = [
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25,
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  null,
+  null,
+  null,
+  null,
+  null,
+];
+
+const weeks = [];
+
+for (let i = 0; i < days.length; i += 7) {
+  weeks.push(days.slice(i, i + 7));
+}
+
+const vacationDays = [8, 9, 10, 11, 12, 13, 14, 15, 16];
+---
+
+<section class="sidebar calendar">
+  <h2>Calendar</h2>
+
+  <div class="calendar-wrapper">
+    <table>
+      <caption class="en">2026 / AUGUST</caption>
+  
+      <thead>
+        <tr>
+          <th scope="col">Sun</th>
+          <th scope="col">Mon</th>
+          <th scope="col">Tue</th>
+          <th scope="col">Wed</th>
+          <th scope="col">Thu</th>
+          <th scope="col">Fri</th>
+          <th scope="col">Sat</th>
+        </tr>
+      </thead>
+  
+      <tbody>
+        {
+          weeks.map((week) => (
+            <tr>
+              {
+                week.map((day) => {
+                  const isVacation = day && vacationDays.includes(day);
+                  // const isNull = day && week.includes(null);
+                  const isNull = day === null;
+                  return (
+                    <td class:list={{ "summer-vacation": isVacation,"is-null": isNull }}>
+                      {isVacation ? <a href={`#day_${String(day).padStart(2, "0")}`}>{day}</a> : day}
+                    </td>
+                  );
+                })
+                /* {week.map((day) => (
+                <td>{day}</td>
+              ))} */
+              }
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+</section>

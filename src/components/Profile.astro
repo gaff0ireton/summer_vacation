@@ -1,0 +1,26 @@
+---
+const stickers = [
+  { img: "/images/img_profile_sticker_01.webp", name: "dog" },
+  { img: "/images/img_profile_sticker_02.webp", name: "unchi" },
+];
+---
+
+<aside class="profile">
+  <h3>Profile</h3>
+  <picture>
+    <img src="/images/img_profile.webp" alt="あなたを見て、笑っているコーギー" />
+  </picture>
+
+  <p>
+    犬が大好き。<br />
+    幼稚園の頃に飼っていたコーギーには、足を噛まれ、追いかけ回され、転ばされ、本の上にうんちまでされました。<br />
+    それでも大好き。
+  </p>
+  {
+    stickers.map((sticker) => (
+      <span class={`profile__sticker profile__sticker--${sticker.name}`}>
+        <img src={sticker.img} alt="" />
+      </span>
+    ))
+  }
+</aside>

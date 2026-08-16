@@ -13,19 +13,60 @@ import "../styles/global.scss";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <meta property="og:title" content="SUMMER DIARY" />
+    <meta property="og:description" content="夏の日々を気ままに綴る日記サイトです。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/images/ogp.webp" />
     <title>{title}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bungee&family=M+PLUS+1:wght@100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-  </head>
-  <body>
+  </head><body>
     <Header />
 
     <slot />
 
     <Footer />
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const smoothScrollTrigger =
+          document.querySelectorAll('a[href^="#"]');
+
+        const header = document.querySelector('.header');
+
+        for (let i = 0; i < smoothScrollTrigger.length; i++) {
+          smoothScrollTrigger[i].addEventListener('click', (e) => {
+            e.preventDefault();
+
+            const href = smoothScrollTrigger[i].getAttribute('href');
+            if (!href) return;
+
+            const targetElement = document.getElementById(
+              href.replace('#', '')
+            );
+
+            if (targetElement) {
+              const rect = targetElement.getBoundingClientRect().top;
+              const offset = window.scrollY;
+
+              const gap =
+                window.innerWidth <= 750 && header
+                  ? header.offsetHeight
+                  : 0;
+
+              const target = rect + offset - gap;
+
+              window.scrollTo({
+                top: target,
+                behavior: 'smooth',
+              });
+            }
+          });
+        }
+      });
+    </script>
   </body>
 </html>

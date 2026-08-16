@@ -1,0 +1,85 @@
+// common/_index.scss を読み込む（mixin が使える）
+@use "../common" as *;
+
+.sidebar {
+    flex-basis: 50%;
+    // flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(28px, vw-pc(32), 32px);
+    height: fit-content;
+    position: sticky;
+    top: clamp(28px, vw-pc(32), 32px);
+
+    @include mq(tab) {
+        flex-basis: 100%;
+    }
+
+    .calendar {
+
+        &-wrapper {
+            @extend %card;
+        }
+
+        table {
+            width: 100%;
+            table-layout: fixed;
+            border-collapse: separate;
+            border-spacing: 5px;
+            border: none;
+
+
+            thead,
+            tbody {
+                display: table-header-group;
+                display: table-row-group;
+            }
+
+            th,
+            td {
+                width: calc(100% / 7);
+                color: $txtColor;
+                padding: clamp(26px, vw-pc(30), 30px) 0;
+                border: 2px solid $mainColor;
+                border-radius: 10px;
+                background-color: #fff;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+                vertical-align: middle;
+                text-align: center;
+
+                @include mq() {
+                    padding: vw(20, 375) 0;
+                    box-shadow: 0 vw-sp(2) vw-sp(5) rgba(0, 0, 0, 0.05);
+                    border-radius: vw-sp(10);
+                }
+
+                &:first-child {
+                    color: $sundayColor;
+                }
+
+                &:last-child {
+                    color: $saturdayColor;
+                }
+            }
+
+            .summer-vacation {
+                background-color: $bgacColor;
+                padding: 0;
+
+                >a {
+                    display: block;
+                    padding: clamp(26px, vw-pc(30), 30px) 0;
+
+                    @include mq() {
+                        padding: vw(20, 375) 0;
+
+                    }
+                }
+            }
+
+            .is-null {
+                opacity: 0;
+            }
+        }
+    }
+}

@@ -1,127 +1,40 @@
 // common/_index.scss を読み込む（mixin が使える）
 @use "../common" as *;
 
-.menuSection {
+.profile {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 30%;
+    gap: 16px;
     position: relative;
-    z-index: 1;
-    margin-top: 32px;
+    @extend %card;
 
-    @include mq(){
-        margin-top: vw-sp(32);
+    h3{
+        text-align: center;
     }
 
-    p,
-    figcaption {
-        color: #fff;
+    picture {
+        border-radius: 50%;
+        overflow: hidden;
     }
 
-    &__bg {
-        @extend %wave__bg;
-        width: 100%;
-        height: 100%;
-        min-height: 100vh;
+    &__sticker {
+        @extend %sticker;
 
-        &::after {
-            content: "";
-            background-color: #0080ff42;
-            mix-blend-mode: color-dodge;
-            display: block;
-            height: 100%;
-            width: 100%;
-            position: absolute;
+        @include mq() {
+            width: vw(120,750);
         }
 
-
-        &-movie {
-            position: absolute;
-            top: 0;
-            bottom: 0;
+        &--dog {
+            top: 10%;
             left: 0;
+            transform: rotate(-25deg);
+        }
+
+        &--unchi {
+            bottom: 25%;
             right: 0;
-            width: 100%;
-            min-height: 100vh;
-
-            video {
-                display: block;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        }
-    }
-
-    &__contents {
-        position: relative;
-        padding: 64px 0;
-
-        h2 {
-            color: $bgColor;
-        }
-
-        h3 {
-            color: #fff;
-        }
-
-        .swiperFood {
-            @extend %swiper;
-
-            .swiper-wrapper {
-                .swiper-slide {
-                    img {
-                        @extend %swiper__img;
-                    }
-
-                    figcaption {
-                        @extend %swiper__txt;
-                    }
-                }
-            }
-        }
-
-        .swiperDrink {
-            @extend %swiper;
-
-            .swiper-wrapper {
-                .swiper-slide {
-                    img {
-                        @extend %swiper__img;
-                    }
-
-                    figcaption {
-                        @extend %swiper__txt;
-                    }
-                }
-            }
-        }
-
-        .swiperTakeOut {
-            @extend %swiper;
-
-            .swiper-wrapper {
-                .swiper-slide {
-                    img {
-                        @extend %swiper__img;
-                    }
-
-                    figcaption {
-                        @extend %swiper__txt;
-                    }
-                }
-            }
-        }
-
-        .swiper-pagination {
-            position: relative;
-
-            &-bullet {
-                background-color: #fff;
-                opacity: .5;
-
-                &-active {
-                    background-color: $mainColor;
-                    opacity: 1;
-                }
-            }
+            transform: rotate(25deg);
         }
     }
 }

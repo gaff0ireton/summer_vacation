@@ -1,0 +1,18 @@
+---
+const stickers = [
+  { img: "/images/img_mv_sticker_01.webp", name: "cocktail" },
+  { img: "/images/img_mv_sticker_02.webp", name: "palm" },
+  { img: "/images/img_mv_sticker_03.webp", name: "flower" },
+  // { img: "🍉", name: "suica" },
+  // { img: "🍨", name: "ice" },
+];
+---
+
+<div class="mv">
+  <div class="mv__bg"></div>
+  <h1><span>summer</span><span>vacation</span></h1>
+  <p class="mv__subtext"><span>MY SUMMER DIARY</span><br /><span>AUGUST 2026</span></p>
+  {stickers.map((sticker) => <span class={`mv__sticker mv__sticker--${sticker.name}`}>
+    <img src={sticker.img} alt="">
+  </span>)}
+</div>

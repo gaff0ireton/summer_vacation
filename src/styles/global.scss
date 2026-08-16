@@ -4,6 +4,6 @@
 body{
     background-color: $bgColor;
     h1{
-        font-size: vw-pc(32);
+        font-size: clamp(28px,vw-pc(32),32px);
     }
 }
