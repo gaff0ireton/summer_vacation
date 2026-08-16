@@ -13,12 +13,12 @@ const stickers = [
   <div>
     {
       stickers.map((sticker) => (
-        <h4>
+        <p>
           <span class={`boom__sticker boom__sticker--${sticker.name}`}>
             <img src={sticker.img} alt="" />
           </span>
           {sticker.name}
-        </h4>
+        </p>
       ))
     }
   </div>

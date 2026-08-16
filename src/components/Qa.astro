@@ -1,0 +1,27 @@
+---
+const qa = [
+  { q: "DOG OR CAT?", a: "DOG...DOG IS GOD. 🐶" },
+  { q: "MORNING OR NIGHT?", a: "NIGHT 🌙" },
+  { q: "FAVORITE SEASON?", a: "WINTER ⛄" },
+  { q: "PC OR CONSOLE?", a: "PC 🖥" },
+  { q: "FAVORITE COLOR?", a: "BLACK 🖤" },
+  { q: "STAY HOME OR GO OUT?", a: "STAY HOME 🏠" },
+  { q: "ONE THING YOU NEED?", a: "INTERNET 📡" },
+  { q: "SWEET OR SPICY?", a: "BOTH! 🍰🌶" },
+  { q: "DREAM PET?", a: "LOTS OF DOGS 🐕🐕🐕" },
+];
+---
+
+<section class="qa">
+  <h3>Q&A</h3>
+  <dl>
+    {
+      qa.map((qa) => (
+        <dt>
+          {qa.q}
+        </dt>
+        <dd>→ {qa.a}</dd>
+      ))
+    }
+  </dl>
+</section>
