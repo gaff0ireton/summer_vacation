@@ -13,9 +13,6 @@
         h3{
         text-align: center;
 
-        @include mq() {
-            font-size: vw(32,375);
-        }
     }
 }
 
@@ -79,7 +76,7 @@
         text-transform: uppercase;
 
         @include mq() {
-            font-size: vw(24,375);
+            font-size: vw(20,375);
         }
 
         > span{

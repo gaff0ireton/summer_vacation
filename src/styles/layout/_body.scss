@@ -258,6 +258,12 @@ body {
   }
 }
 
+.contents-wrapper.side-end{
+  @include mq() {
+    gap: vw(32, 375);
+  }
+}
+
 .main-wrapper {
   display: flex;
   flex-flow: column;
