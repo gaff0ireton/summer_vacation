@@ -14,11 +14,10 @@
 
     &__button {
         width: 70px;
-        height: 50svh;
+        height: 50vh;
         display: flex;
         align-items: center;
         justify-content: center;
-        writing-mode: vertical-rl;
         font-family: "Bungee", "M PLUS Rounded 1c", sans-serif;
         font-size: 32px;
         color: #fff;
@@ -27,9 +26,14 @@
         border-radius: 0 25px 25px 0;
         transform: rotate(180deg);
 
+        span {
+        white-space: nowrap;
+        transform: rotate(90deg);
+    }
+
         @include mq() {
             width: vw(35,375);
-            height: 25svh;
+            height: 25vh;
             font-size: vw(16,375);
             position: relative;
             top: vw(-160,375);
