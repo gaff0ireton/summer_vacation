@@ -1,14 +1,14 @@
 ---
 const stickers = [
-  { img: "/images/img_profile_sticker_01.webp", name: "dog" },
-  { img: "/images/img_profile_sticker_02.webp", name: "unchi" },
+  { img: `${import.meta.env.BASE_URL}images/img_profile_sticker_01.webp`, name: "dog" },
+  { img: `${import.meta.env.BASE_URL}images/img_profile_sticker_02.webp`, name: "unchi" },
 ];
 ---
 
 <aside class="profile">
   <h3>Profile</h3>
   <picture>
-    <img src="/images/img_profile.webp" alt="あなたを見て、笑っているコーギー" />
+    <img src=`${import.meta.env.BASE_URL}images/img_profile.webp` alt="あなたを見て、笑っているコーギー" />
   </picture>
 
   <p>
