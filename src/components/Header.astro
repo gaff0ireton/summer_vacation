@@ -1,8 +1,31 @@
-<header>
-    <h1></h1>
-    <nav>
-        <ul>
-            <li></li>
-        </ul>
-    </nav>
-</header>
+<nav class="side-nav">
+  <button class="side-nav__button" type="button"> MENU </button>
+
+  <div class="side-nav__body">
+    <ul>
+      <li><a href="#blog">DIARY</a></li>
+      <li class="sp-only"><a href="#calendar">CALENDAR</a></li>
+      <li><a href="#about">ABOUT ME</a></li>
+    </ul>
+  </div>
+</nav>
+<script>
+  const nav = document.querySelector(".side-nav");
+  const button = document.querySelector(".side-nav__button");
+
+  button.addEventListener("click", () => {
+    nav.classList.toggle("is-open");
+  });
+
+  window.addEventListener("scroll", () => {
+    if (nav.classList.contains("is-open")) {
+      nav.classList.remove("is-open");
+    }
+  });
+
+  document.addEventListener("click", (e) => {
+  if (!nav.contains(e.target)) {
+    nav.classList.remove("is-open");
+  }
+});
+</script>

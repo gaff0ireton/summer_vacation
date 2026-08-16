@@ -64,9 +64,9 @@
 	display: flex;
 	flex-direction: column;
 	gap: .5em;
-	border-radius: clamp(44px, vw-pc(50),50px);
+	border-radius: clamp(44px, vw-pc(50), 50px);
 	border: solid 5px $mainColor;
-	padding: clamp(28px, vw-pc(32),32px);
+	padding: clamp(28px, vw-pc(32), 32px);
 	background-color: $cardColor;
 	box-shadow: clamp(28px, vw-pc(32), 32px) clamp(28px, vw-pc(32), 32px) 0px 0px $subColor;
 
@@ -75,7 +75,7 @@
 		padding: vw(32, 750);
 		border-width: vw(3, 375);
 		border-radius: vw(25, 375);
-		box-shadow: vw(16,750) vw(16,750) 0px 0px $subColor;
+		box-shadow: vw(16, 750) vw(16, 750) 0px 0px $subColor;
 	}
 }
 
@@ -87,6 +87,54 @@
 
 	@include mq(tab) {
 		width: 11.71875cqw;
+	}
+
+	@include mq() {
+		width: vw(120, 750);
+		filter: drop-shadow(vw(3, 375) vw(4, 375) vw(2, 375) rgba(0, 0, 0, 0.25));
+	}
+}
+
+%sticker_card {
+	position: absolute;
+	z-index: 10;
+	width: 17.16738197424893cqw;
+	filter: drop-shadow(3px 4px 2px rgba(0, 0, 0, 0.25));
+
+	@include mq(tab) {
+		width: 13.02931596091205cqw;
+	}
+
+	@include mq() {
+		width: vw(120, 750);
+		filter: drop-shadow(vw(3, 375) vw(4, 375) vw(2, 375) rgba(0, 0, 0, 0.25));
+	}
+}
+
+%sticker_img {
+	position: absolute;
+	z-index: 10;
+	width: 19.23076923076923cqw;
+	filter: drop-shadow(3px 4px 2px rgba(0, 0, 0, 0.25));
+
+	@include mq(tab) {
+		width: 14.03508771929825cqw;
+	}
+
+	@include mq() {
+		width: vw(120, 750);
+		filter: drop-shadow(vw(3, 375) vw(4, 375) vw(2, 375) rgba(0, 0, 0, 0.25));
+	}
+}
+
+%sticker_prof {
+	position: absolute;
+	z-index: 10;
+	width: 27.45995423340961cqw;
+	filter: drop-shadow(3px 4px 2px rgba(0, 0, 0, 0.25));
+
+	@include mq(tab) {
+		width: 13.02931596091205cqw;
 	}
 
 	@include mq() {

@@ -14,7 +14,11 @@
     &__ttl {
         display: flex;
         align-items: center;
-        gap: 1rem;
+        gap: clamp(14px, vw-pc(16), 18px);
+
+        @include mq() {
+            gap: vw(8,375);
+        }
     }
 
     &__weather {
@@ -30,7 +34,7 @@
     }
 
     .blogSection__sticker {
-        @extend %sticker;
+        @extend %sticker_img;
 
         &--hamburger {
             top: 5%;
@@ -121,22 +125,11 @@
 
                 overflow: visible;
 
-                time {
-                    color: $mainColor;
-                    font-size: clamp(28px, vw-pc(32), 32px);
-                    font-weight: 400;
-
-                    @include mq() {
-                        font-size: vw(36, 750);
-                    }
-
-                }
-
                 >div {
                     position: relative;
+                    container-type: inline-size;
 
                     .diary-img {
-                        container-type: inline-size;
                         border-radius: clamp(44px, vw-pc(50), 50px);
                         overflow: hidden;
 

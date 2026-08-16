@@ -1,144 +1,72 @@
 // ② common/_index.scss を読み込む（mixin が使える）
 @use "../common" as *;
 
-.header {
+.side-nav {
     position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    padding: 20px;
-    pointer-events: none;
+    top: 50%;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    transform: translateY(-50%);
+    transition: transform 0.4s ease;
+    height: 100svh;
 
-    @include mq(){
-        padding: vw-sp(10);
+    &__button {
+        width: 70px;
+        height: 50svh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        writing-mode: vertical-rl;
+        font-family: "Bungee", "M PLUS Rounded 1c", sans-serif;
+        font-size: 32px;
+        color: #fff;
+        text-shadow: 3px 2px 0 #29485c;
+        background-color: $acColor;
+        border-radius: 0 25px 25px 0;
+        transform: rotate(180deg);
+
+        @include mq() {
+            width: vw(35,375);
+            height: 25svh;
+            font-size: vw(16,375);
+            position: relative;
+            top: vw(-160,375);
+        }
     }
 
-    &__logo {
+    &__body {
         width: 300px;
-        height: auto;
-        pointer-events: auto;
-
-        @include mq(){
-            width: vw-sp(200);
-        }
-
-        svg {
-            transition: opacity .3s;
-
-            &:hover {
-                opacity: .5;
-            }
-
-            .cls-1 {
-                fill: #fff;
-                transition: fill .3s;
-            }
-
-            .is-over {
-                fill: $mainColor;
-            }
-        }
-    }
-
-    &__wrap {
-        position: relative;
-    }
-
-    &__btn {
-        width: 40px;
-        height: 30px;
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        cursor: pointer;
-        z-index: 3;
-        display: inline-block;
-        pointer-events: auto;
-
-        span {
-            display: block;
-            height: 4px;
-            margin: 6px 0;
-            background: #fff;
-            border-radius: 2px;
-            transition: 0.4s;
-
-            &.is-over {
-                background: $mainColor;
-            }
-
-            &.is-click {
-                background: #fff;
-            }
-        }
-    }
-
-    &__nav {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 100%;
         height: 100%;
-        background: $mainColor;
-        transition: right 0.4s ease;
-        z-index: 2;
+        padding: 16px 32px;
+        background-color: $acColor;
+
 
         ul {
-            list-style: none;
-            padding: 60px 20px;
-            pointer-events: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+            gap: 12px;
+        }
 
-            li {
-                margin: 20px 0;
-
-                a {
-                    text-decoration: none;
-                    color: #fff;
-                    font-size: 1.2rem;
-                    transition: opacity ease 0.3s;
-
-                    &:hover {
-                        opacity: .5;
-                    }
-                }
-            }
+        a {
+            font-family: "Bungee", "M PLUS Rounded 1c", sans-serif;
+            font-size: 32px;
+            color: #fff;
+            text-shadow: 3px 2px 0 #29485c;
         }
     }
 
-    picture {
-        position: fixed;
-        right: -100%;
-        bottom: 0;
-        z-index: 2;
-        width: 100%;
-        transition: right 0.4s ease;
-    }
+    // 最初はbodyぶん右に隠す
+    transform:
+        translateY(-50%)
+        translateX(300px);
 
-    #menu-toggle {
-        &:checked {
-            +.header__btn {
-                span {
-                    &:first-child {
-                        transform: translateY(10px) rotate(45deg);
-                    }
-
-                    &:nth-child(2) {
-                        opacity: 0;
-                    }
-
-                    &:last-child {
-                        transform: translateY(-10px) rotate(-45deg);
-                    }
-                }
-            }
-
-            ~.header__nav {
-                right: 0;
-            }
-
-            ~picture {
-                right: 0;
-            }
-        }
+    &.is-open {
+        transform:
+            translateY(-50%)
+            translateX(0);
     }
 }

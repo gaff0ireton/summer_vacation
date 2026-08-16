@@ -53,27 +53,35 @@ for (let i = 0; i < days.length; i += 7) {
 }
 
 const vacationDays = [8, 9, 10, 11, 12, 13, 14, 15, 16];
+
+const stickers = [
+  { img: `${import.meta.env.BASE_URL}/images/img_calendar_sticker_01.webp`, name: "himawari" },
+  // { img: `${import.meta.env.BASE_URL}/images/img_mv_sticker_02.webp`, name: "palm" },
+  // { img: `${import.meta.env.BASE_URL}/images/img_mv_sticker_03.webp`, name: "flower" },
+  // { img: "🍉", name: "suica" },
+  // { img: "🍨", name: "ice" },
+];
 ---
 
-<section class="sidebar calendar">
+<section class="sidebar calendar" id="calendar">
   <h2>Calendar</h2>
 
   <div class="calendar-wrapper">
     <table>
       <caption class="en">2026 / AUGUST</caption>
-  
+
       <thead>
         <tr>
-          <th scope="col">Sun</th>
-          <th scope="col">Mon</th>
-          <th scope="col">Tue</th>
-          <th scope="col">Wed</th>
-          <th scope="col">Thu</th>
-          <th scope="col">Fri</th>
-          <th scope="col">Sat</th>
+          <th scope="col">S</th>
+          <th scope="col">M</th>
+          <th scope="col">T</th>
+          <th scope="col">W</th>
+          <th scope="col">T</th>
+          <th scope="col">F</th>
+          <th scope="col">S</th>
         </tr>
       </thead>
-  
+
       <tbody>
         {
           weeks.map((week) => (
@@ -84,7 +92,7 @@ const vacationDays = [8, 9, 10, 11, 12, 13, 14, 15, 16];
                   // const isNull = day && week.includes(null);
                   const isNull = day === null;
                   return (
-                    <td class:list={{ "summer-vacation": isVacation,"is-null": isNull }}>
+                    <td class:list={{ "summer-vacation": isVacation, "is-null": isNull }}>
                       {isVacation ? <a href={`#day_${String(day).padStart(2, "0")}`}>{day}</a> : day}
                     </td>
                   );
@@ -98,5 +106,12 @@ const vacationDays = [8, 9, 10, 11, 12, 13, 14, 15, 16];
         }
       </tbody>
     </table>
+    {
+      stickers.map((sticker) => (
+        <span class={`sidebar__sticker sidebar__sticker--${sticker.name}`}>
+          <img src={sticker.img} alt="" />
+        </span>
+      ))
+    }
   </div>
 </section>

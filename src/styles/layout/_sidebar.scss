@@ -3,7 +3,7 @@
 
 .sidebar {
     flex-basis: 50%;
-    // flex-grow: 2;
+    container-type: inline-size;
     display: flex;
     flex-direction: column;
     gap: clamp(28px, vw-pc(32), 32px);
@@ -13,12 +13,34 @@
 
     @include mq(tab) {
         flex-basis: 100%;
+        position: unset;
+        gap: vw(32, 375);
+    }
+
+    &__sticker {
+        @extend %sticker_card;
+        
+
+        &--himawari {
+            top: -8%;
+            right: 0;
+            transform: rotate(10deg);
+
+            @include mq() {
+                top: 0%;
+            }
+        }
     }
 
     .calendar {
 
         &-wrapper {
             @extend %card;
+            position: relative;
+        }
+
+        caption{
+            padding-bottom: .5em;
         }
 
         table {
@@ -48,17 +70,25 @@
                 text-align: center;
 
                 @include mq() {
-                    padding: vw(20, 375) 0;
+                    padding: vw(10, 375) 0;
                     box-shadow: 0 vw-sp(2) vw-sp(5) rgba(0, 0, 0, 0.05);
                     border-radius: vw-sp(10);
                 }
 
                 &:first-child {
                     color: $sundayColor;
+
+                    > a{
+                        color: $sundayColor;
+                    }
                 }
 
                 &:last-child {
                     color: $saturdayColor;
+
+                    > a{
+                        color: $saturdayColor;
+                    }
                 }
             }
 
@@ -71,7 +101,7 @@
                     padding: clamp(26px, vw-pc(30), 30px) 0;
 
                     @include mq() {
-                        padding: vw(20, 375) 0;
+                        padding: vw(10, 375) 0;
 
                     }
                 }

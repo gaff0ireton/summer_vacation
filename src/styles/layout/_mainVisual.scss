@@ -68,9 +68,8 @@
         line-height: 0.82;
         letter-spacing: -0.04em;
         color: #fff;
-
+        z-index: 20;
         -webkit-text-stroke: 2px $mainColor;
-
         text-shadow:
             2px 2px 0 $subColor,
             4px 4px 0 $subColor,

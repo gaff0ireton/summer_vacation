@@ -1,0 +1,25 @@
+---
+const stickers = [
+  { img: `${import.meta.env.BASE_URL}/images/img_like_sticker_01.webp`, name: "dog" },
+  { img: `${import.meta.env.BASE_URL}/images/img_profile_sticker_01.webp`, name: "Shark" },
+  { img: `${import.meta.env.BASE_URL}/images/img_like_sticker_02.webp`, name: "horse" },
+  { img: `${import.meta.env.BASE_URL}/images/img_diary_sticker_05.webp`, name: "game" },
+  { img: `${import.meta.env.BASE_URL}/images/img_diary_sticker_06.webp`, name: "coding" },
+];
+---
+
+<section class="boom">
+  <h3>FAVORITE / LIKE</h3>
+  <div>
+    {
+      stickers.map((sticker) => (
+        <h4>
+          <span class={`boom__sticker boom__sticker--${sticker.name}`}>
+            <img src={sticker.img} alt="" />
+          </span>
+          {sticker.name}
+        </h4>
+      ))
+    }
+  </div>
+</section>

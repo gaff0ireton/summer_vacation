@@ -49,11 +49,11 @@
 
 
 .en {
-  font-family: "Bungee", sans-serif;
+  font-family: "nitalago-rera", sans-serif;
 }
 
 .jp {
-  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-family: "nitalago-rera", sans-serif;
 }
 
 p,
@@ -62,16 +62,16 @@ a,
 figcaption,
 dd,
 dt {
-  font-family: "M PLUS 1", sans-serif;
+  font-family: "nitalago-rera", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
   font-size: clamp(16px, vw-pc(16), 18px);
   color: $txtColor;
-  text-transform: uppercase;
+
 
   @include mq() {
-    font-size: vw(14, 375);
+    font-size: vw(16, 375);
   }
 }
 
@@ -90,10 +90,10 @@ p {
 time,
 th,
 td {
-  font-family: "Bungee", sans-serif;
+  font-family: "nitalago-rera", sans-serif;
 
   >a {
-    font-family: "Bungee", sans-serif;
+    font-family: "nitalago-rera", sans-serif;
     transition: .3s;
 
     &:hover {
@@ -149,12 +149,15 @@ h2 {
 }
 
 h3,
-caption {
+caption,
+time {
   color: $mainColor;
+  font-family: "nitalago-rera", sans-serif;
   font-size: clamp(28px, vw-pc(32), 32px);
+  font-weight: 700;
 
   @include mq() {
-    font-size: vw(32, 750);
+    font-size: vw(20, 375);
   }
 }
 
@@ -221,6 +224,7 @@ picture {
 
   img {
     max-width: 100%;
+    width: 100%;
     height: auto;
     display: block;
     margin: 0 auto;
@@ -266,7 +270,8 @@ body {
       1920px);
 
   @include mq(tab) {
-    display: block;
+    flex-direction: column;
+    gap: vw(128,750);
   }
 }
 
