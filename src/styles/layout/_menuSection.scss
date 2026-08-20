@@ -4,6 +4,7 @@
 .about{
     display: flex;
     flex-direction: column;
+    flex: 1;
     gap: clamp(28px, vw-pc(32), 32px);
 
     @include mq() {
@@ -12,14 +13,13 @@
 
         h3{
         text-align: center;
-
     }
 }
 
 .profile {
     display: flex;
     flex-direction: column;
-    flex-basis: 30%;
+    flex: 1;
     gap: 16px;
     position: relative;
     container-type: inline-size;
@@ -51,6 +51,8 @@
     @extend %card;
     gap: 16px;
     align-self: flex-start;
+
+    flex: 1;
 
     @include mq(tab) {
         align-self: stretch;
@@ -94,6 +96,7 @@
     @extend %card;
     gap: 16px;
     align-self: flex-start;
+    flex: 1;
 
     @include mq(tab) {
         align-self: stretch;
