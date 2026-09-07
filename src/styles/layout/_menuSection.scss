@@ -1,7 +1,7 @@
 // common/_index.scss を読み込む（mixin が使える）
 @use "../common" as *;
 
-.about{
+.about {
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -11,7 +11,7 @@
         gap: vw(32, 375);
     }
 
-        h3{
+    h3 {
         text-align: center;
     }
 }
@@ -51,7 +51,7 @@
 
 
 
-.boom{
+.boom {
     @extend %card;
     gap: 16px;
     align-self: flex-start;
@@ -62,17 +62,17 @@
         align-self: stretch;
     }
 
-    h3{
+    h3 {
         text-align: center;
     }
 
-    > div {
+    >div {
         display: flex;
         flex-direction: column;
         gap: .5em;
     }
 
-    p{
+    p {
         display: flex;
         align-items: center;
         gap: 16px;
@@ -82,15 +82,15 @@
         text-transform: uppercase;
 
         @include mq() {
-            font-size: vw(20,375);
+            font-size: vw(20, 375);
         }
 
-        > span{
+        >span {
             width: 60px;
             filter: drop-shadow(3px 4px 2px rgba(0, 0, 0, 0.25));
 
             @include mq() {
-                width: vw(60,375);
+                width: vw(60, 375);
             }
         }
     }
@@ -98,7 +98,7 @@
 
 
 
-.qa{
+.qa {
     @extend %card;
     gap: 16px;
     align-self: flex-start;
@@ -110,35 +110,35 @@
     }
 }
 
-.about.is-inview{
-    h2{
+.about.is-inview {
+    h2 {
         @extend %is-inview;
     }
 }
 
-.about.is-inview.is-view{
-    h2{
+.about.is-inview.is-view {
+    h2 {
         @extend %is-view;
     }
 }
 
-:is(.profile,.boom,.qa).is-inview {
-  opacity: 0;
-  translate: 0 16px;
+:is(.profile, .boom, .qa).is-inview {
+    opacity: 0;
+    translate: 0 16px;
 }
 
-.profile.is-inview{
+.profile.is-inview {
     transition: 1s ease .2s;
 }
 
-.boom.is-inview{
+.boom.is-inview {
     transition: 1s ease .4s;
 }
 
-.qa.is-inview{
+.qa.is-inview {
     transition: 1s ease .6s;
 }
 
-:is(.profile,.boom,.qa).is-inview.is-view {
+:is(.profile, .boom, .qa).is-inview.is-view {
     @extend %is-view;
 }
