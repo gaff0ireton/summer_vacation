@@ -66,37 +66,5 @@ const ogImage = new URL(
     <slot />
 
     <Footer />
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const smoothScrollTrigger = document.querySelectorAll('a[href^="#"]');
-
-        const header = document.querySelector(".header");
-
-        for (let i = 0; i < smoothScrollTrigger.length; i++) {
-          smoothScrollTrigger[i].addEventListener("click", (e) => {
-            e.preventDefault();
-
-            const href = smoothScrollTrigger[i].getAttribute("href");
-            if (!href) return;
-
-            const targetElement = document.getElementById(href.replace("#", ""));
-
-            if (targetElement) {
-              const rect = targetElement.getBoundingClientRect().top;
-              const offset = window.scrollY;
-
-              const gap = window.innerWidth <= 750 && header ? header.offsetHeight : 0;
-
-              const target = rect + offset - gap;
-
-              window.scrollTo({
-                top: target,
-                behavior: "smooth",
-              });
-            }
-          });
-        }
-      });
-    </script>
   </body>
 </html>

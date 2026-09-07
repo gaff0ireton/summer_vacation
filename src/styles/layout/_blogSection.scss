@@ -11,13 +11,31 @@
         gap: vw(32, 375);
     }
 
+    li.is-inview {
+        article {
+            opacity: 0;
+            transform: translateX(-100px);
+            transition:
+                transform 0.5s,
+                opacity 0.5s;
+        }
+    }
+
+    li.is-inview.is-view {
+        article {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+    }
+
     &__ttl {
         display: flex;
         align-items: center;
         gap: clamp(14px, vw-pc(16), 18px);
 
         @include mq() {
-            gap: vw(4,375);
+            gap: vw(4, 375);
         }
     }
 
@@ -65,7 +83,7 @@
             transform: rotate(20deg);
         }
 
-        &--pc{
+        &--pc {
             top: 5%;
             right: 0;
             transform: rotate(20deg);
@@ -145,6 +163,18 @@
                     }
                 }
             }
+        }
+    }
+
+    &:has(li:first-child.is-inview) {
+        h2 {
+            @extend %is-inview;
+        }
+    }
+
+    &:has(li:first-child.is-inview.is-view) {
+        h2 {
+            @extend %is-view;
         }
     }
 }

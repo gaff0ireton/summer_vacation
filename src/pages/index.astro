@@ -18,7 +18,7 @@ import "../styles/global.scss";
       <Sidebar />
     </div>
 
-    <aside class="about" id="about">
+    <aside class="about is-inview" id="about">
       <h2>about me</h2>
       <div class="contents-wrapper side-end">
         <Profile />
@@ -27,4 +27,55 @@ import "../styles/global.scss";
       </div>
     </aside>
   </main>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // 1. 通常の要素用（50%で発火）
+      const standardObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-view");
+              standardObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.5 },
+      );
+
+      // 2. 振り分け処理
+      const targets = document.querySelectorAll(".is-inview");
+      targets.forEach((target) => {
+        standardObserver.observe(target);
+      });
+
+      const smoothScrollTrigger = document.querySelectorAll('a[href^="#"]');
+
+      const header = document.querySelector(".header");
+
+      for (let i = 0; i < smoothScrollTrigger.length; i++) {
+        smoothScrollTrigger[i].addEventListener("click", (e) => {
+          e.preventDefault();
+
+          const href = smoothScrollTrigger[i].getAttribute("href");
+          if (!href) return;
+
+          const targetElement = document.getElementById(href.replace("#", ""));
+
+          if (targetElement) {
+            const rect = targetElement.getBoundingClientRect().top;
+            const offset = window.scrollY;
+
+            const gap = window.innerWidth <= 750 && header ? header.offsetHeight : 0;
+
+            const target = rect + offset - gap;
+
+            window.scrollTo({
+              top: target,
+              behavior: "smooth",
+            });
+          }
+        });
+      }
+    });
+  </script>
 </Layout>

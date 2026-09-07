@@ -19,7 +19,7 @@
 
     &__sticker {
         @extend %sticker_card;
-        
+
 
         &--himawari {
             top: -8%;
@@ -39,7 +39,7 @@
             position: relative;
         }
 
-        caption{
+        caption {
             padding-bottom: .5em;
         }
 
@@ -78,7 +78,7 @@
                 &:first-child {
                     color: $sundayColor;
 
-                    > a{
+                    >a {
                         color: $sundayColor;
                     }
                 }
@@ -86,7 +86,7 @@
                 &:last-child {
                     color: $saturdayColor;
 
-                    > a{
+                    >a {
                         color: $saturdayColor;
                     }
                 }
@@ -111,5 +111,30 @@
                 opacity: 0;
             }
         }
+    }
+}
+
+.sidebar.is-inview {
+    h2 {
+        @extend %is-inview;
+    }
+
+    .calendar-wrapper {
+        opacity: 0;
+        transform: translateX(100px);
+        transition:
+            transform 0.5s,
+            opacity 0.5s;
+    }
+}
+
+.sidebar.is-inview.is-view {
+    h2 {
+        @extend %is-view;
+    }
+
+    .calendar-wrapper {
+        opacity: 1;
+        transform: translateX(0);
     }
 }

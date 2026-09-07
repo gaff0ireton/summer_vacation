@@ -16,6 +16,8 @@
     }
 }
 
+
+
 .profile {
     display: flex;
     flex-direction: column;
@@ -47,12 +49,14 @@
     }
 }
 
+
+
 .boom{
     @extend %card;
     gap: 16px;
     align-self: flex-start;
-
     flex: 1;
+    transition: 1s ease .4s;
 
     @include mq(tab) {
         align-self: stretch;
@@ -92,13 +96,49 @@
     }
 }
 
+
+
 .qa{
     @extend %card;
     gap: 16px;
     align-self: flex-start;
     flex: 1;
+    transition: 1s ease .4s;
 
     @include mq(tab) {
         align-self: stretch;
     }
+}
+
+.about.is-inview{
+    h2{
+        @extend %is-inview;
+    }
+}
+
+.about.is-inview.is-view{
+    h2{
+        @extend %is-view;
+    }
+}
+
+:is(.profile,.boom,.qa).is-inview {
+  opacity: 0;
+  translate: 0 16px;
+}
+
+.profile.is-inview{
+    transition: 1s ease .2s;
+}
+
+.boom.is-inview{
+    transition: 1s ease .4s;
+}
+
+.qa.is-inview{
+    transition: 1s ease .6s;
+}
+
+:is(.profile,.boom,.qa).is-inview.is-view {
+    @extend %is-view;
 }
