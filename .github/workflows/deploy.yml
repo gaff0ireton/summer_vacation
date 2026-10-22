@@ -22,7 +22,7 @@ jobs:
       - name: Install, build, and upload
         uses: withastro/action@v5
         with:
-        node-version: 24.22.1
+          node-version: 24.22.1
 
   deploy:
     needs: build
